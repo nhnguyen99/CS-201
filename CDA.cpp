@@ -33,7 +33,7 @@ class CDA {
     elmtype *arr;
     elmtype ret;
     bool flag;
-    void deepCopy(const CDA<elmtype> &obj);
+    void DeepCopy(const CDA<elmtype> &obj);
 
 };
 
@@ -202,7 +202,7 @@ void CDA<elmtype>::Clear() {
 
 template <typename elmtype>
 CDA<elmtype>::CDA(const CDA<elmtype> &obj) {
-  deepCopy(obj);
+  DeepCopy(obj);
 }
 
 template <typename elmtype>
@@ -210,13 +210,13 @@ CDA<elmtype> &CDA<elmtype>::operator=(const CDA<elmtype> &obj)
 {
   if (this != &obj) {
     delete[] arr;
-    deepCopy(obj);
+    DeepCopy(obj);
   }
   return *this;
 }
 
 template <typename elmtype>
-void CDA<elmtype>::deepCopy(const CDA<elmtype> &obj) {
+void CDA<elmtype>::DeepCopy(const CDA<elmtype> &obj) {
   capacity = obj.capacity;
   size = obj.size;
   front = obj.front;
